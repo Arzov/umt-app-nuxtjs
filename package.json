@@ -4,12 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "cross-env NUXT_HOST=0.0.0.0 NUXT_PORT=3000 nuxt-ts",
+    "sass": "sass --watch src/assets/styles:src/assets/styles --style=compressed --no-source-map",
     "build": "nuxt-ts build",
     "start": "nuxt-ts start",
     "generate": "nuxt-ts generate && npx cap copy",
-    "generate:hot-reload": "nuxt-ts generate && npx cap copy",
-    "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
-    "lint": "yarn lint:js",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore . --fix",
     "test": "jest",
     "build:android": "npx cap add android",
     "build:ios": "npx cap open ios",
@@ -23,6 +22,7 @@
     "@capacitor/core": "^2.4.6",
     "@capacitor/ios": "2.4.6",
     "@nuxt/typescript-runtime": "^2.0.1",
+    "cordova-plugin-navigationbar-color": "^0.1.0",
     "core-js": "^3.8.2",
     "nuxt": "^2.14.12"
   },
