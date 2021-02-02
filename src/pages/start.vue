@@ -46,7 +46,7 @@
                     </a-col>
                 </a-row>
 
-                <p><b>¿No tienes cuenta? <a>Regístrate</a></b></p>
+                <p><b>¿No tienes cuenta? <a @click="toRegister">Regístrate</a></b></p>
             </a-col>
         </a-row>
     </div>
@@ -54,5 +54,10 @@
 
 <script>
     export default {
+        methods: {
+            toRegister () {
+                this.$router.push({ path: 'register' })
+            }
+        }
     }
 </script>
