@@ -20,12 +20,13 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    'umt-components/src/assets/styles/styles.css'
-    // '@/assets/styles/styles.css'
+    'umt-components/src/assets/styles/styles.css',
+    '@/assets/styles/styles.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '@/plugins/umt-setup.js',
     '@/plugins/umt-components.js'
   ],
 
@@ -45,5 +46,17 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     publicPath: '/nuxt/'
+  },
+
+  srcDir: 'src/',
+
+  router: {
+    extendRoutes (routes, resolve) {
+      routes.push({
+        name: 'custom',
+        path: '*',
+        component: resolve(__dirname, 'src/pages/start.vue')
+      })
+    }
   }
 }

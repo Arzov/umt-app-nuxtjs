@@ -3653,6 +3653,11 @@ copy-descriptor@^0.1.0:
   resolved "https://registry.yarnpkg.com/copy-descriptor/-/copy-descriptor-0.1.1.tgz#676f6eb3c39997c2ee1ac3a924fd6124748f578d"
   integrity sha1-Z29us8OZl8LuGsOpJP1hJHSPV40=
 
+cordova-plugin-navigationbar-color@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/cordova-plugin-navigationbar-color/-/cordova-plugin-navigationbar-color-0.1.0.tgz#7a1c8341c62ed7421e241b5de55550afcaa6f8fe"
+  integrity sha512-O/JfdLerNc0Jcq/4nTvsW45IzojtJT0Biayl8ZKSAKtQv6U7tOLUZ1/k+dRGZnBNoQyNc5gC9Lbn6A573v9UhA==
+
 core-js-compat@^3.8.0:
   version "3.8.2"
   resolved "https://registry.yarnpkg.com/core-js-compat/-/core-js-compat-3.8.2.tgz#3717f51f6c3d2ebba8cbf27619b57160029d1d4c"

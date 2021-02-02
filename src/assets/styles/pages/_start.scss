@@ -1,0 +1,23 @@
+.umt-page-start {
+  display: flex;
+  flex-direction: column;
+  padding: $size-default-padding 0;
+
+  .logo, .shoes {
+    margin-top: $size-default-factor * 10;
+  }
+
+  .shoes {
+    margin-bottom: $size-default-factor * 2;
+  }
+
+  .buttons {
+    flex-grow: 1;
+
+    .buttons-container > * {
+      margin-top: $size-default-factor * 10;
+      margin-bottom: 0;
+      text-align: center;
+    }
+  }
+}
