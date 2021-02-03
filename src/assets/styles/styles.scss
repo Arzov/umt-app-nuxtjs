@@ -1,6 +1,14 @@
 // GLOBALS
 @import './globals/sizes';
+@import './globals/layouts';
 @import './globals/pages';
+
+// LAYOUTS
+@import './layouts/step';
+
+// COMPONENTS
+@import './components/umt-date-picker';
 
 // PAGES
 @import './pages/start';
+@import './pages/register';

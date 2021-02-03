@@ -1,0 +1,34 @@
+.umt-layout-step {
+  .background {
+    display: flex;
+    flex-direction: column;
+
+    .bkg-bl {
+      flex-grow: 1;
+
+      img {
+        margin-bottom: $size-default-factor * 10;
+      }
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+
+    .header {
+      min-height: $size-default-factor * 15;
+      margin: ($size-default-factor * 10) 0 ($size-default-factor * 5) 0;
+
+      .title {
+        text-align: center;
+      }
+    }
+
+    .page-wrapper {
+      position: relative;
+      flex-grow: 1;
+      margin-bottom: $size-default-factor * 10;
+    }
+  }
+}

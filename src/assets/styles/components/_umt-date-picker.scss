@@ -1,0 +1,14 @@
+.umt-date-picker {
+  display: flex;
+  flex-direction: column;
+
+  & > h4 {
+    margin-bottom: $size-default-factor * 2;
+  }
+
+  & .umt-input {
+    input {
+      text-align: center;
+    }
+  }
+}

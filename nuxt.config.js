@@ -20,7 +20,6 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    'umt-components/src/assets/styles/styles.css',
     '@/assets/styles/styles.css'
   ],
 
@@ -55,7 +54,13 @@ export default {
       routes.push({
         name: 'custom',
         path: '*',
-        component: resolve(__dirname, 'src/pages/start.vue')
+        component: resolve(__dirname, 'src/pages/index.vue')
+      })
+
+      routes.push({
+        name: 'start',
+        path: '/start',
+        component: resolve(__dirname, 'src/pages/index.vue')
       })
     }
   }
