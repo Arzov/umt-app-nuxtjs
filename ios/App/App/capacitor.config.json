@@ -1,0 +1,19 @@
+{
+  "appId": "com.arzov.umatch",
+  "appName": "Umatch",
+  "bundledWebRuntime": false,
+  "npmClient": "yarn",
+  "webDir": "dist",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0,
+      "backgroundColor": "#f1f3ff",
+      "showSpinner": false
+    }
+  },
+  "cordova": {},
+  "server": {
+    "url": "http://192.168.0.9:3000",
+    "cleartext": true
+  }
+}

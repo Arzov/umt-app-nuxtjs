@@ -1,3 +1,10 @@
 .umt-page-register {
+  .info {
+    margin: ($size-default-factor * 5) 0;
+    text-align: center;
+  }
 
+  .terms {
+    margin-top: $size-default-factor * 5;
+  }
 }
