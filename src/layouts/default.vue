@@ -1,7 +1,15 @@
 <template>
-    <umt-theme-provider :theme="$umtTheme">
-        <umt-media-query>
+    <umt-layout-base>
+        <div class="umt-layout umt-layout-step">
             <Nuxt />
-        </umt-media-query>
-    </umt-theme-provider>
+        </div>
+    </umt-layout-base>
 </template>
+
+<script>
+    import UmtLayoutBase from '../components/UmtLayoutBase.vue'
+    export default {
+        components: { UmtLayoutBase }
+
+    }
+</script>
