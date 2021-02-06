@@ -10,7 +10,7 @@ export default {
     },
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1, viewport-fit=cover' },
       { hid: 'description', name: 'description', content: '' }
     ],
     link: [
@@ -47,20 +47,20 @@ export default {
     publicPath: '/nuxt/'
   },
 
-  srcDir: 'src/',
+  srcDir: 'src/main/',
 
   router: {
     extendRoutes (routes, resolve) {
       routes.push({
         name: 'custom',
         path: '*',
-        component: resolve(__dirname, 'src/pages/index.vue')
+        component: resolve(__dirname, 'src/main/pages/index.vue')
       })
 
       routes.push({
         name: 'start',
         path: '/start',
-        component: resolve(__dirname, 'src/pages/index.vue')
+        component: resolve(__dirname, 'src/main/pages/index.vue')
       })
     }
   }

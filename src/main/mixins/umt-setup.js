@@ -22,6 +22,11 @@ export default {
             color: backgroundColor.trim()
           })
 
+          // Configura overlay para notch
+          StatusBar.setOverlaysWebView({
+            overlay: false
+          })
+
           // Configura color de navigation-bar
           if (currentTheme === 'light') {
             NavigationBar.backgroundColorByHexString(backgroundColor.trim(), true)
