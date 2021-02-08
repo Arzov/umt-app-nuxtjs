@@ -9,7 +9,7 @@
         <a-row type="flex" justify="center">
             <a-col :span="18">
                 <p class="info">
-                    Ingresa tu código de verificación enviado a <a>{{ $route.params.email }}</a>
+                    <b>Ingresa tu código de verificación enviado a <a>{{ $route.params.email }}</a></b>
                 </p>
             </a-col>
         </a-row>

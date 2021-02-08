@@ -33,7 +33,9 @@
 
         <a-row type="flex" align="bottom" class="buttons">
             <a-col :span="18" :offset="3" class="buttons-container">
-                <umt-button>iniciar sesión</umt-button>
+                <umt-button @click="toLogin">
+                    iniciar sesión
+                </umt-button>
 
                 <p>-O ingresa con tus redes sociales-</p>
 
@@ -46,7 +48,7 @@
                     </a-col>
                 </a-row>
 
-                <p><b>¿No tienes cuenta? <a @click="toRegister">Regístrate</a></b></p>
+                <p><b>¿No tienes cuenta? <a @click="toRegister">Regístrate.</a></b></p>
             </a-col>
         </a-row>
     </div>
@@ -55,6 +57,10 @@
 <script>
     export default {
         methods: {
+            toLogin () {
+                this.$router.push({ path: 'login' })
+            },
+
             toRegister () {
                 this.$router.push({ path: 'register' })
             }
