@@ -51,7 +51,7 @@
         },
         methods: {
             toRecoverPassword () {
-
+                this.$router.push({ path: 'recover-password' })
             }
         }
     }
