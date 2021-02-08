@@ -8,6 +8,11 @@
 
 <script>
     export default {
+        mounted () {
+            const backgroundElement = document.querySelector('.umt-layout > .background')
 
+            if (backgroundElement != null)
+                backgroundElement.style.height = backgroundElement.clientHeight + 'px'
+        }
     }
 </script>

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "cross-env NUXT_HOST=0.0.0.0 NUXT_PORT=3000 nuxt-ts",
-    "sass": "sass --watch src/assets/styles:src/assets/styles --style=compressed --no-source-map",
+    "sass": "sass --watch src/main/assets/styles:src/main/assets/styles --style=compressed --no-source-map",
     "generate": "nuxt-ts generate && npx cap copy",
     "sync": "npx cap sync",
     "build:mobile": "./build.sh",
