@@ -39,12 +39,20 @@
         data () {
             return {
                 stepTitle: 'recupera tu contraseña',
-                stepBackView: 'login'
+                stepBackView: 'login',
+                email: ''
             }
         },
         methods: {
             recoverPassword () {
-
+                if (this.email) {
+                    this.$router.push({
+                        name: 'reset-password-email',
+                        params: {
+                            email: this.email
+                        }
+                    })
+                }
             }
         }
     }
