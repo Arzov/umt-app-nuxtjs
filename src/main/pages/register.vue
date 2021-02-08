@@ -5,16 +5,19 @@
                 <umt-input placeholder="Ingresa tu nombre" />
             </a-col>
         </a-row>
+
         <a-row type="flex" justify="center">
             <a-col :span="18">
-                <umt-input placeholder="Ingresa tu correo electrónico" type="email" />
+                <umt-input v-model="email" placeholder="Ingresa tu correo electrónico" type="email" />
             </a-col>
         </a-row>
+
         <a-row type="flex" justify="center">
             <a-col :span="18">
                 <umt-date-picker label="fecha de nacimiento" placeholder="Ingresa tu fecha de nacimiento" :max="getMaxDate" :min="getminDate" />
             </a-col>
         </a-row>
+
         <a-row type="flex" justify="center">
             <a-col :span="18">
                 <umt-radio-group v-model="gender" name="gender" label="sexo">
@@ -45,7 +48,9 @@
 
         <a-row type="flex" justify="center">
             <a-col :span="18">
-                <umt-button>registrar</umt-button>
+                <umt-button @click="registerUser">
+                    registrar
+                </umt-button>
             </a-col>
         </a-row>
 
@@ -68,7 +73,8 @@
             return {
                 stepTitle: 'ingresa tus datos',
                 stepBackView: 'start',
-                gender: 'M'
+                gender: 'M',
+                email: ''
             }
         },
         computed: {
@@ -78,6 +84,18 @@
 
             getminDate () {
                 return moment().subtract(60, 'years').add(1, 'days').toDate()
+            }
+        },
+        methods: {
+            registerUser () {
+                if (this.email) {
+                    this.$router.push({
+                        name: 'email-verification-email',
+                        params: {
+                            email: this.email
+                        }
+                    })
+                }
             }
         }
     }

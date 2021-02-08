@@ -1,0 +1,14 @@
+.umt-page-email-verification {
+    .mailbox {
+        margin: $size-default-factor * 5 0;
+    }
+
+    .info {
+        margin-bottom: $size-default-factor * 8;
+        text-align: center;
+    }
+
+    .send-code {
+        margin: ($size-default-factor * 5) 0;
+    }
+}
