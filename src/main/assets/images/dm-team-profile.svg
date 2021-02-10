@@ -3,9 +3,11 @@
 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:none;}
-	.st1{fill:#00ECF2;}
+	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#0B1623;}
+	.st1{fill:none;}
+	.st2{fill:#00ECF2;}
 </style>
-<rect class="st0" width="64" height="64"/>
-<polygon class="st1" points="51.1,31 16.5,31 23.8,23.2 22.4,21.8 12.9,32 22.4,42.2 23.8,40.8 16.5,33 51.1,33 "/>
+<circle class="st0" cx="32" cy="32" r="32"/>
+<rect class="st1" width="64" height="64"/>
+<path class="st2" d="M32,14.6L17.8,21v9.4c0,0,0.5,15.9,14.2,19c13.7-3.1,14.2-19,14.2-19V21L32,14.6z"/>
 </svg>
