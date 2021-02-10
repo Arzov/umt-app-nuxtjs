@@ -1,17 +1,5 @@
 <template>
-    <div class="umt-page umt-page-register">
-        <a-row type="flex" justify="center">
-            <a-col :span="18">
-                <umt-input placeholder="Ingresa tu nombre" />
-            </a-col>
-        </a-row>
-
-        <a-row type="flex" justify="center">
-            <a-col :span="18">
-                <umt-input v-model="email" placeholder="Ingresa tu correo electrónico" type="email" />
-            </a-col>
-        </a-row>
-
+    <div class="umt-page umt-page-required-attributes">
         <a-row type="flex" justify="center">
             <a-col :span="18">
                 <umt-date-picker label="fecha de nacimiento" placeholder="Ingresa tu fecha de nacimiento" :max="getMaxDate" :min="getminDate" />
@@ -48,15 +36,15 @@
 
         <a-row type="flex" justify="center">
             <a-col :span="18">
-                <umt-button @click="registerUser">
-                    registrar
+                <umt-button @click="next">
+                    continuar
                 </umt-button>
             </a-col>
         </a-row>
 
-        <a-row class="terms" type="flex" justify="center">
+        <a-row class="close-session" type="flex" justify="center">
             <a-col>
-                <a>Términos y condiciones</a>
+                <a>Cerrar sesión</a>
             </a-col>
         </a-row>
     </div>
@@ -71,10 +59,8 @@
         layout: 'step',
         data () {
             return {
-                stepTitle: 'ingresa tus datos',
-                stepBackView: 'start',
-                gender: 'M',
-                email: ''
+                stepTitle: 'datos necesarios',
+                gender: 'M'
             }
         },
         computed: {
@@ -87,16 +73,7 @@
             }
         },
         methods: {
-            registerUser () {
-                if (this.email) {
-                    this.$router.push({
-                        name: 'email-verification-email',
-                        params: {
-                            email: this.email
-                        }
-                    })
-                }
-            }
+            next () {}
         }
     }
 </script>

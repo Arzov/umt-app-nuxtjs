@@ -1,20 +1,6 @@
 <template>
     <div class="umt-component umt-date-picker">
-        <h4 v-if="label">
-            {{ label }}
-        </h4>
-
-        <a-row type="flex" :gutter="12">
-            <a-col :span="8">
-                <umt-input :value="privateValue['day']" placeholder="Día" @focus="onPress" />
-            </a-col>
-            <a-col :span="8">
-                <umt-input :value="privateValue['month']" placeholder="Mes" @focus="onPress" />
-            </a-col>
-            <a-col :span="8">
-                <umt-input :value="privateValue['year']" placeholder="Año" @focus="onPress" />
-            </a-col>
-        </a-row>
+        <umt-input :value="_date" :placeholder="placeholder" @focus="onPress" />
     </div>
 </template>
 
@@ -27,12 +13,6 @@
 
     export default Vue.extend({
         props: {
-            label: {
-                required: false,
-                type: String,
-                default: undefined
-            },
-
             placeholder: {
                 required: false,
                 type: String,
@@ -60,6 +40,14 @@
         data () {
             return {
                 privateValue: {} as any
+            }
+        },
+        computed: {
+            _date () {
+                if (this.privateValue && this.privateValue['date'])
+                    return this.privateValue['date'].format('DD-MM-YYYY')
+
+                return ''
             }
         },
         watch: {
@@ -90,7 +78,8 @@
                             this.privateValue = {
                                 day: moment(date.value, 'DD-MM-YYYY').format('DD'),
                                 month: moment(date.value, 'DD-MM-YYYY').format('MM'),
-                                year: moment(date.value, 'DD-MM-YYYY').format('YYYY')
+                                year: moment(date.value, 'DD-MM-YYYY').format('YYYY'),
+                                date: moment(date.value, 'DD-MM-YYYY')
                             }
 
                             this.$emit('input', this.privateValue)

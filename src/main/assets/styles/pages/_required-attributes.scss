@@ -1,0 +1,16 @@
+.umt-page-required-attributes {
+    padding-bottom: $size-default-padding;
+
+    .info {
+        margin: ($size-default-factor * 5) 0;
+        text-align: center;
+    }
+
+    .close-session {
+        margin-top: $size-default-factor * 5;
+    }
+
+    .radio-group-row > .ant-col {
+        min-width: 150px;
+    }
+}

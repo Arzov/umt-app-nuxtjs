@@ -15,9 +15,6 @@ export default {
     },
 
     setBackView (state, value) {
-      if (value == null)
-        throw new Error('Ingrese nombre vista a volver. Este puede estar en blanco pero nunca undefined.')
-
       state.backView = value
     }
   },

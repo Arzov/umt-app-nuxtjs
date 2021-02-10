@@ -20,7 +20,7 @@
 
         <a-row type="flex" justify="center">
             <a-col :span="18">
-                <umt-button>
+                <umt-button @click="login">
                     iniciar sesión
                 </umt-button>
             </a-col>
@@ -50,6 +50,10 @@
             }
         },
         methods: {
+            login () {
+                this.$router.push({ path: 'required-attributes' })
+            },
+
             toRecoverPassword () {
                 this.$router.push({ path: 'recover-password' })
             }

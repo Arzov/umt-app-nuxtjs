@@ -4,8 +4,9 @@
 	 viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:none;}
-	.st1{fill:#00ECF2;}
+	.st1{fill-rule:evenodd;clip-rule:evenodd;fill:#B19FFB;}
 </style>
 <rect class="st0" width="64" height="64"/>
-<polygon class="st1" points="51.1,31 16.5,31 23.8,23.2 22.4,21.8 12.9,32 22.4,42.2 23.8,40.8 16.5,33 51.1,33 "/>
+<path class="st1" d="M32,0C14.3,0,0,14.3,0,32s14.3,32,32,32s32-14.3,32-32S49.7,0,32,0z M50.9,48.3L48.2,51L31.9,34.7L15.7,51
+	L13,48.3l16.3-16.3L13,15.8l2.7-2.7l16.3,16.3L48.3,13l2.7,2.7L34.6,32.1L50.9,48.3z"/>
 </svg>
