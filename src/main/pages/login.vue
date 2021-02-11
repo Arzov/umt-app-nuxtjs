@@ -29,7 +29,7 @@
         <a-row type="flex" justify="center" class="forgot-password">
             <a-col :span="18">
                 <p>
-                    <b>¿Olvidaste tu contraseña? <a @click="toRecoverPassword">Recupérala.</a></b>
+                    <b>¿Olvidaste tu contraseña? <a @click="toRecoverPassword"><b>Recupérala.</b></a></b>
                 </p>
             </a-col>
         </a-row>

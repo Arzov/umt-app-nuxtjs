@@ -44,8 +44,8 @@
         },
         computed: {
             _date () {
-                if (this.privateValue && this.privateValue['date'])
-                    return this.privateValue['date'].format('DD-MM-YYYY')
+                if (this.value && this.value['date'])
+                    return this.value['date'].format('DD-MM-YYYY')
 
                 return ''
             }

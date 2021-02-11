@@ -1,23 +1,23 @@
 <template>
-    <div class="umt-page umt-page-required-attributes">
+    <div class="umt-page umt-page-optional-attributes">
         <a-row type="flex" justify="center">
             <a-col :span="18">
-                <umt-date-picker label="fecha de nacimiento" placeholder="Ingresa tu fecha de nacimiento" :max="getMaxDate" :min="getminDate" />
+                <umt-position-group v-model="positions" />
             </a-col>
         </a-row>
 
         <a-row type="flex" justify="center">
             <a-col :span="18">
-                <umt-radio-group v-model="gender" name="gender" label="sexo">
-                    <a-row type="flex" :gutter="12" class="radio-group-row">
+                <umt-radio-group v-model="foot" name="foot" label="pie hábil">
+                    <a-row type="flex" :gutter="12" class="radio-group-foot">
                         <a-col :span="12" :flex="1">
-                            <umt-radio value="M">
-                                Masculino
+                            <umt-radio value="R">
+                                Derecho
                             </umt-radio>
                         </a-col>
                         <a-col :span="12" :flex="1">
-                            <umt-radio value="F">
-                                Femenino
+                            <umt-radio value="L">
+                                Izquierdo
                             </umt-radio>
                         </a-col>
                     </a-row>
@@ -27,10 +27,14 @@
 
         <a-row type="flex" justify="center">
             <a-col :span="18">
-                <p class="info">
-                    *Tu edad y sexo permitirán a otros rivales
-                    encontrarte y desafiarte en un match.
-                </p>
+                <a-row type="flex" :gutter="12" class="row-height-weight">
+                    <a-col :span="12" :flex="1">
+                        <umt-input placeholder="Estatura" type="number" suffix="cm" />
+                    </a-col>
+                    <a-col :span="12" :flex="1">
+                        <umt-input placeholder="Peso" type="number" suffix="kg" />
+                    </a-col>
+                </a-row>
             </a-col>
         </a-row>
 
@@ -42,39 +46,32 @@
             </a-col>
         </a-row>
 
-        <a-row class="close-session" type="flex" justify="center">
+        <a-row class="skip" type="flex" justify="center">
             <a-col>
-                <a><b>Cerrar sesión</b></a>
+                <a><b>Omitir</b></a>
             </a-col>
         </a-row>
     </div>
 </template>
 
 <script>
-    import moment from 'moment'
+    import UmtPositionGroup from '../components/UmtPositionGroup.vue'
     import UmtLayoutStepMixin from './../mixins/umt-layout-step'
 
     export default {
+        components: { UmtPositionGroup },
         mixins: [UmtLayoutStepMixin],
         layout: 'step',
         data () {
             return {
-                stepTitle: 'datos necesarios',
-                gender: 'M'
-            }
-        },
-        computed: {
-            getMaxDate () {
-                return moment().subtract(16, 'years').add(1, 'days').toDate()
-            },
-
-            getminDate () {
-                return moment().subtract(60, 'years').add(1, 'days').toDate()
+                stepTitle: 'habilidades y características',
+                foot: 'R',
+                positions: ['MD']
             }
         },
         methods: {
             next () {
-                this.$router.push({ path: 'optional-attributes' })
+
             }
         }
     }

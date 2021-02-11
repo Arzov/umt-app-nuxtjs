@@ -48,7 +48,7 @@
                     </a-col>
                 </a-row>
 
-                <p><b>¿No tienes cuenta? <a @click="toRegister">Regístrate.</a></b></p>
+                <p><b>¿No tienes cuenta? <a @click="toRegister"><b>Regístrate.</b></a></b></p>
             </a-col>
         </a-row>
     </div>

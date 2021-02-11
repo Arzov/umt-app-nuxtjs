@@ -7,6 +7,7 @@
 @import './layouts/step';
 
 // COMPONENTS
+@import './components/umt-position-group';
 
 // PAGES
 @import './pages/start';
@@ -16,3 +17,4 @@
 @import './pages/recover-password';
 @import './pages/reset-password';
 @import './pages/required-attributes';
+@import './pages/optional-attributes';

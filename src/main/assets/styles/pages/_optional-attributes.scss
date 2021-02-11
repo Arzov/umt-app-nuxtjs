@@ -1,0 +1,10 @@
+.umt-page-optional-attributes {
+    .skip {
+        margin-top: $size-default-factor * 5;
+    }
+
+    .row-height-weight > .ant-col,
+    .radio-group-foot > .ant-col, {
+        min-width: 150px;
+    }
+}
