@@ -125,7 +125,7 @@
         },
         methods: {
             next () {
-
+                this.$router.push({ path: 'optional-filters' })
             }
         }
     }
