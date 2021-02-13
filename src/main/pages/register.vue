@@ -56,7 +56,7 @@
 
         <a-row class="terms" type="flex" justify="center">
             <a-col>
-                <a>Términos y condiciones</a>
+                <a><b>Términos y condiciones</b></a>
             </a-col>
         </a-row>
     </div>

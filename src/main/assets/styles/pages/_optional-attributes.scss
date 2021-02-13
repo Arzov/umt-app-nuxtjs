@@ -1,0 +1,31 @@
+.umt-page-optional-attributes {
+    .skip {
+        margin-top: $size-default-factor * 5;
+    }
+
+    .row-height-weight > .ant-col,
+    .radio-group-foot > .ant-col {
+        min-width: 150px;
+    }
+
+    .modal-positions {
+
+        .umt-modal-container {
+            padding: ($size-default-factor * 10) 0;
+
+            .title {
+                margin: $size-default-factor * 2;
+                text-transform: none;
+                font-size: 1.3rem;
+            }
+
+            .info {
+                text-align: justify;
+            }
+        }
+
+        .position-row {
+            margin-top: 10px;
+        }
+    }
+}

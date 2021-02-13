@@ -1,0 +1,15 @@
+.umt-position-group {
+    margin-bottom: $size-default-factor * 5;
+
+    .positions {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+        column-gap: 8px;
+        row-gap: 12px;
+        justify-items: stretch;
+        align-items: start;
+        grid-auto-columns: auto;
+        margin-top: $size-default-factor * 2;
+        padding: 0 ($size-default-factor * 3);
+    }
+}

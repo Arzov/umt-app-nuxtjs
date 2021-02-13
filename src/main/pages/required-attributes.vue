@@ -44,7 +44,7 @@
 
         <a-row class="close-session" type="flex" justify="center">
             <a-col>
-                <a>Cerrar sesión</a>
+                <a><b>Cerrar sesión</b></a>
             </a-col>
         </a-row>
     </div>
@@ -73,7 +73,9 @@
             }
         },
         methods: {
-            next () {}
+            next () {
+                this.$router.push({ path: 'optional-attributes' })
+            }
         }
     }
 </script>
