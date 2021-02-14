@@ -56,7 +56,7 @@
         <umt-modal v-if="showModal" class="modal-positions" @click="showModal = false">
             <a-row type="flex" justify="center">
                 <a-col>
-                    <h2 class="title">
+                    <h2 class="umt-modal-title">
                         Posiciones de juego
                     </h2>
                 </a-col>
@@ -76,7 +76,7 @@
                         :key="pos.key"
                         type="flex"
                         :gutter="12"
-                        align="center"
+                        align="middle"
                         class="position-row"
                     >
                         <a-col>

@@ -1,7 +1,7 @@
 <template>
     <a-row type="flex" align="middle" class="header">
         <a-col :span="2" :offset="2">
-            <umt-back-arrow v-if="back" @click="goBack" />
+            <umt-back-arrow-icon v-if="back" @click="goBack" />
         </a-col>
 
         <a-col :span="16" class="title">
@@ -11,11 +11,11 @@
 </template>
 
 <script>
-    import UmtBackArrow from './icons/UmtBackArrow.vue'
+    import UmtBackArrowIcon from './icons/UmtBackArrowIcon.vue'
 
     export default {
         components: {
-            UmtBackArrow
+            UmtBackArrowIcon
         },
         props: {
             title: {

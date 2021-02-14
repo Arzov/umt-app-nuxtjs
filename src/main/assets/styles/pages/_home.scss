@@ -1,0 +1,20 @@
+.umt-page-home {
+    // MODALS
+    .modal-geoloc {
+        .umt-modal-container {
+            .pin {
+                width: $size-default-factor * 10;
+                margin-bottom: $size-default-factor * 10;
+            }
+
+            .info {
+                text-align: justify;
+                margin-bottom: $size-default-factor * 10;
+            }
+
+            .close-sesion {
+                margin-top: $size-default-factor * 5;
+            }
+        }
+    }
+}
