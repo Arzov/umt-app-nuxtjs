@@ -1,0 +1,9 @@
+.umt-home-bkg {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .br {
+        flex-grow: 1;
+    }
+}

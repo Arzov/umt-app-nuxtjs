@@ -1,0 +1,11 @@
+.umt-layout-home {
+    .content {
+        display: flex;
+        flex-direction: column;
+
+        .page-wrapper {
+            flex-grow: 1;
+            position: relative;
+        }
+    }
+}
