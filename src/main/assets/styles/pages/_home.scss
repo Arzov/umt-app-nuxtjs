@@ -1,6 +1,13 @@
 .umt-page-home {
     .container {
         padding: ($size-default-factor * 10) 0;
+        height: 100%;
+    }
+
+    .container-col {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
     }
 
     .profile {
@@ -23,6 +30,14 @@
     .news {
         &-title {
             margin-bottom: $size-default-factor * 3;
+        }
+    }
+
+    .tabs {
+        flex-grow: 1;
+
+        .umt-tabs {
+            height: 100%;
         }
     }
 

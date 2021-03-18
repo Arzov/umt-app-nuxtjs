@@ -1,13 +1,13 @@
 <template>
     <div class="umt-page umt-page-home">
         <a-row type="flex" justify="center" class="container">
-            <a-col :span="22">
+            <a-col :span="22" class="container-col">
 
                 <!-- CONTENT -->
                 <a-row type="flex" justify="end" align="middle" class="profile">
                     <a-col :flex="1">
                         <div class="greeting">
-                            <h2 @click="changeMode">
+                            <h2>
                                 ¡Hola Jesús!
                             </h2>
                             <span>Busca nuevos desafíos.</span>
@@ -30,7 +30,27 @@
                 </a-row>
                 <a-row type="flex" class="news-slide">
                     <a-col :span="24">
-                        <umt-transfer-cell v-for="(t, index) in transfers" :key="index" :team="t.team" :profile="t.profile" :date="t.date" />
+                        <umt-slide>
+                            <umt-transfer-cell v-for="(t, index) in transfers" :key="index" :team="t.team" :profile="t.profile" :date="t.date" />
+                        </umt-slide>
+                    </a-col>
+                </a-row>
+
+                <a-row type="flex" class="tabs">
+                    <a-col :span="24">
+                        <umt-tabs>
+                            <umt-tab-panel tab="1" label="desafiar">
+                                Prueba
+                            </umt-tab-panel>
+
+                            <umt-tab-panel tab="2" label="parchar">
+                                Prueba 2
+                            </umt-tab-panel>
+
+                            <umt-tab-panel tab="3" label="filtros">
+                                Prueba 3
+                            </umt-tab-panel>
+                        </umt-tabs>
                     </a-col>
                 </a-row>
 
@@ -106,17 +126,41 @@
                         },
 
                         date: '2021-02-16'
+                    },
+                    {
+                        team: {
+                            name: 'MAN. UNITED',
+                            image: 'https://1.bp.blogspot.com/-H7yH4f3xhcc/W13iC-mChEI/AAAAAAAAJNk/NKrpWalUMioc-ssVO6PSXwFroNRIyD4JQCLcBGAs/s320/1.png'
+                        },
+
+                        profile: {
+                            name: 'Franco',
+                            image: 'https://avatars.githubusercontent.com/u/4986311?s=460&v=4'
+                        },
+
+                        date: '2021-01-25'
+                    },
+                    {
+                        team: {
+                            name: 'MAN. UNITED',
+                            image: 'https://1.bp.blogspot.com/-H7yH4f3xhcc/W13iC-mChEI/AAAAAAAAJNk/NKrpWalUMioc-ssVO6PSXwFroNRIyD4JQCLcBGAs/s320/1.png'
+                        },
+
+                        profile: {
+                            name: 'Diego',
+                            image: 'https://lh3.googleusercontent.com/yBL734dVthXXAvh2CNtBa535bHIVyPoAmKa_4YOBJhp-ofChRGW9QAdE88DoBA07kxp_Uw=s85'
+                        },
+
+                        date: '2021-02-10'
                     }
-                ]
+                ],
+                showA: true,
+                showB: true
             }
         },
         methods: {
             onAcceptGeoloc () {
                 this.showModalGeoloc = false
-            },
-
-            changeMode () {
-                this.$store.commit('umt-components/setTheme', 'dm')
             }
         }
     }
