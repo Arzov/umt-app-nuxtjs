@@ -17,6 +17,7 @@
 <script>
     import { mapGetters } from 'vuex'
     import UmtLayoutBase from '../components/UmtLayoutBase.vue'
+    const { NavigationBar } = window
 
     export default {
         components: { UmtLayoutBase },
@@ -26,6 +27,21 @@
                 activeTab: 'layout-home/activeTab',
                 background: 'layout-home/background'
             })
+        },
+        mounted () {
+            setTimeout(() => {
+                const currentTheme = this.$store.getters['theme/currentTheme']
+                const themeElement = document.getElementById('theme-provider')
+                const style = getComputedStyle(themeElement)
+                const backgroundColor = style.getPropertyValue('--navigation-bar-bkg-color')
+
+                // Configura color de navigation-bar
+                if (currentTheme === 'light') {
+                    NavigationBar.backgroundColorByHexString(backgroundColor.trim(), true)
+                } else {
+                    NavigationBar.backgroundColorByHexString(backgroundColor.trim(), false)
+                }
+            }, 1)
         }
     }
 </script>

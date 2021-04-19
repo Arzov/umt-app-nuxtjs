@@ -21,6 +21,7 @@
                     </a-col>
                 </a-row>
 
+                <!-- NEWS -->
                 <a-row type="flex" class="news">
                     <a-col :span="24">
                         <h3 class="news-title">
@@ -28,19 +29,33 @@
                         </h3>
                     </a-col>
                 </a-row>
-                <a-row type="flex" class="news-slide">
+                <a-row type="flex" justify="center" class="news-slide">
                     <a-col :span="24">
-                        <umt-slide>
-                            <umt-transfer-cell v-for="(t, index) in transfers" :key="index" :team="t.team" :profile="t.profile" :date="t.date" />
+                        <umt-slide v-if="umtLoading">
+                            <umt-transfer-cell-skeleton v-for="index in 3" :key="index" />
                         </umt-slide>
+                        <keep-alive v-else>
+                            <umt-slide>
+                                <umt-transfer-cell v-for="(t, index) in transfers" :key="index" :team="t.team" :profile="t.profile" :date="t.date" />
+                            </umt-slide>
+                        </keep-alive>
                     </a-col>
                 </a-row>
 
+                <!-- TABS -->
                 <a-row type="flex" class="tabs">
                     <a-col :span="24">
                         <umt-tabs>
-                            <umt-tab-panel tab="1" label="desafiar">
-                                Prueba
+                            <umt-tab-panel tab="1" label="desafiar" class="panel-challenges">
+                                <div v-if="!umtLoading" class="list">
+                                    <umt-challenge-cell v-for="(c, index) in challenges" :key="index" :team="c" />
+                                </div>
+                                <div class="search">
+                                    <umt-button>seguir buscando</umt-button>
+                                </div>
+                                <!-- <div v-if="umtLoading">
+
+                                </div> -->
                             </umt-tab-panel>
 
                             <umt-tab-panel tab="2" label="parchar">
@@ -102,12 +117,12 @@
 
 <script>
     import UmtPinIcon from '../components/icons/UmtPinIcon.vue'
-    import UmtLayoutHomeMixin from './../mixins/umt-layout-home'
+    import UmtLayoutNavigationMixin from '../mixins/umt-layout-navigation'
 
     export default {
         components: { UmtPinIcon },
-        mixins: [UmtLayoutHomeMixin],
-        layout: 'home',
+        mixins: [UmtLayoutNavigationMixin],
+        layout: 'navigation',
         data () {
             return {
                 layoutActiveTab: 'home',
@@ -155,8 +170,50 @@
                     }
                 ],
                 showA: true,
-                showB: true
+                showB: true,
+                challenges: [
+                    {
+                        name: 'MAN. UNITED',
+                        image: 'https://1.bp.blogspot.com/-H7yH4f3xhcc/W13iC-mChEI/AAAAAAAAJNk/NKrpWalUMioc-ssVO6PSXwFroNRIyD4JQCLcBGAs/s320/1.png',
+                        distance: 2
+                    },
+                    {
+                        name: 'REAL MADRID',
+                        image: 'http://as00.epimg.net/img/comunes/fotos/fichas/equipos/large/1.png',
+                        distance: 5
+                    },
+                    {
+                        name: 'FC BARCELONA',
+                        image: 'https://i.pinimg.com/originals/4e/87/0c/4e870c6d61be9306bd9681554b0df83d.png',
+                        distance: 4.5
+                    },
+                    {
+                        name: 'BAYERN MUNICH',
+                        image: 'https://www.logofootball.net/wp-content/uploads/FC-Bayern-Munich-Logo.png',
+                        distance: 3
+                    },
+                    {
+                        name: 'BORUSSIA DORTMUND',
+                        image: 'https://2.bp.blogspot.com/-sNt8VyJtStw/WVUE6AHVB7I/AAAAAAABKZU/Ts238O_8GVEaqDCmCu56NV9xZ457dvwUQCLcBGAs/s1600/Borussia%2BDortmund.png',
+                        distance: 4.5
+                    },
+                    {
+                        name: 'SCHALKE 04',
+                        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/FC_Schalke_04_Logo.png/768px-FC_Schalke_04_Logo.png',
+                        distance: 1
+                    },
+                    {
+                        name: 'ARSENAL F.C.',
+                        image: 'https://1.bp.blogspot.com/-YTfHg_rLRcI/XSPhR75-1hI/AAAAAAAAQzg/mKnWtxoM9jo7IIF7b43LPZPh4xQuK2T6gCLcBGAs/s1600/escudo1.png',
+                        distance: 2.5
+                    }
+                ]
             }
+        },
+        mounted () {
+            setTimeout(() => {
+                this.umtLoading = false
+            }, 5000)
         },
         methods: {
             onAcceptGeoloc () {

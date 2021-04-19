@@ -1,6 +1,6 @@
 .umt-page-home {
     .container {
-        padding: ($size-default-factor * 10) 0;
+        padding: ($size-default-factor * 10) 0 ($size-default-factor * 5) 0;
         height: 100%;
     }
 
@@ -35,9 +35,21 @@
 
     .tabs {
         flex-grow: 1;
+        position: relative;
 
         .umt-tabs {
-            height: 100%;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+            bottom: 0;
+        }
+
+        .panel-challenges {
+            .search {
+                position: sticky;
+                bottom: 0;
+            }
         }
     }
 
