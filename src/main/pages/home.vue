@@ -32,7 +32,7 @@
                 <a-row type="flex" justify="center" class="news-slide">
                     <a-col :span="24">
                         <umt-slide v-if="umtLoading">
-                            <umt-transfer-cell-skeleton v-for="index in 3" :key="index" />
+                            <umt-skeleton v-for="index in 3" :key="index" />
                         </umt-slide>
                         <keep-alive v-else>
                             <umt-slide>
@@ -47,15 +47,15 @@
                     <a-col :span="24">
                         <umt-tabs>
                             <umt-tab-panel tab="1" label="desafiar" class="panel-challenges">
+                                <div v-if="umtLoading" class="list">
+                                    <umt-skeleton v-for="index in 3" :key="index" />
+                                </div>
                                 <div v-if="!umtLoading" class="list">
                                     <umt-challenge-cell v-for="(c, index) in challenges" :key="index" :team="c" />
                                 </div>
                                 <div class="search">
                                     <umt-button>seguir buscando</umt-button>
                                 </div>
-                                <!-- <div v-if="umtLoading">
-
-                                </div> -->
                             </umt-tab-panel>
 
                             <umt-tab-panel tab="2" label="parchar">
@@ -211,6 +211,7 @@
             }
         },
         mounted () {
+            // TODO eliminar después de implementar API
             setTimeout(() => {
                 this.umtLoading = false
             }, 5000)
