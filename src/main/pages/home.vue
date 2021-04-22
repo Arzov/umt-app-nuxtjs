@@ -46,6 +46,7 @@
                 <a-row type="flex" class="tabs">
                     <a-col :span="24">
                         <umt-tabs>
+                            <!-- CHALLENGES -->
                             <umt-tab-panel tab="1" label="desafiar" class="panel-challenges">
                                 <div v-if="umtLoading" class="list">
                                     <umt-skeleton v-for="index in 3" :key="index" />
@@ -53,13 +54,17 @@
                                 <div v-if="!umtLoading" class="list">
                                     <umt-challenge-cell v-for="(c, index) in challenges" :key="index" :team="c" />
                                 </div>
-                                <div class="search">
-                                    <umt-button>seguir buscando</umt-button>
-                                </div>
                             </umt-tab-panel>
 
-                            <umt-tab-panel tab="2" label="parchar">
-                                Prueba 2
+                            <!-- PATCH -->
+                            <umt-tab-panel tab="2" label="parchar" class="panel-patches">
+                                <p>Únete a partidos cercanos a ti. Puedes parchar de manera individual a equipos que requieran de jugadores.</p>
+                                <div v-if="umtLoading" class="list">
+                                    <umt-skeleton v-for="index in 2" :key="index" />
+                                </div>
+                                <div v-if="!umtLoading" class="list">
+                                    <umt-patch-cell v-for="(m, index) in matches" :key="index" :match="m" />
+                                </div>
                             </umt-tab-panel>
 
                             <umt-tab-panel tab="3" label="filtros">
@@ -206,6 +211,24 @@
                         name: 'ARSENAL F.C.',
                         image: 'https://1.bp.blogspot.com/-YTfHg_rLRcI/XSPhR75-1hI/AAAAAAAAQzg/mKnWtxoM9jo7IIF7b43LPZPh4xQuK2T6gCLcBGAs/s1600/escudo1.png',
                         distance: 2.5
+                    }
+                ],
+                matches: [
+                    {
+                        date: '26/08',
+                        teams: [
+                            {
+                                name: 'MAN. UNITED',
+                                image: 'https://1.bp.blogspot.com/-H7yH4f3xhcc/W13iC-mChEI/AAAAAAAAJNk/NKrpWalUMioc-ssVO6PSXwFroNRIyD4JQCLcBGAs/s320/1.png',
+                                distance: 2
+                            },
+                            {
+                                name: 'REAL MADRID',
+                                image: 'http://as00.epimg.net/img/comunes/fotos/fichas/equipos/large/1.png',
+                                distance: 5
+                            }
+                        ],
+                        patches: [2, 3]
                     }
                 ]
             }
