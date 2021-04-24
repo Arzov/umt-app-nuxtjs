@@ -15,7 +15,8 @@
             android:name="com.arzov.umatch.MainActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/SplashTheme"
-            android:launchMode="singleTask">
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
