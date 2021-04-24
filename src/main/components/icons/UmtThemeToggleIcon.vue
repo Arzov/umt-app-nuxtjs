@@ -21,11 +21,13 @@
                         currentTheme: 'dark',
                         currentThemePrefix: 'dm'
                     })
+                    this.$store.commit('umt-components/setTheme', 'dm')
                 } else {
                     this.$store.commit('theme/setTheme', {
                         currentTheme: 'light',
                         currentThemePrefix: 'lm'
                     })
+                    this.$store.commit('umt-components/setTheme', 'lm')
                 }
             }
         }

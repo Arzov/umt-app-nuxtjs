@@ -49,7 +49,7 @@ fi
 
 printf "\n<< Copiando archivos para ios >>\n"
 
-IOS_MAIN_DIR="./src/android"
+IOS_MAIN_DIR="./src/ios"
 if [ -d "$IOS_MAIN_DIR" ]; then
   cp -R "$IOS_MAIN_DIR" "./"
   wait $!

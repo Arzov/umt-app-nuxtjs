@@ -89,7 +89,7 @@
         },
         methods: {
             next () {
-                // this.$router.push({ path: 'optional-filters' })
+                this.$router.push({ path: 'home' })
             }
         }
     }

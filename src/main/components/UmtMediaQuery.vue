@@ -8,8 +8,8 @@
     import Vue from 'vue'
 
     const breakPoints = {
-        sm: 600,
-        md: 800,
+        sm: 500,
+        md: 700,
         lg: 'infinite'
     }
 

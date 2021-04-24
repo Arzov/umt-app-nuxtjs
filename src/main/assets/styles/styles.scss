@@ -5,9 +5,11 @@
 
 // LAYOUTS
 @import './layouts/step';
+@import './layouts/home';
 
 // COMPONENTS
 @import './components/umt-position-group';
+@import './components/umt-home-bkg';
 
 // PAGES
 @import './pages/start';
@@ -19,3 +21,4 @@
 @import './pages/required-attributes';
 @import './pages/optional-attributes';
 @import './pages/optional-filters';
+@import './pages/home';
