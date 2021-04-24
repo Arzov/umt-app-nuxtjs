@@ -1,6 +1,6 @@
 .umt-page-home {
     .container {
-        padding: ($size-default-factor * 10) 0 ($size-default-factor * 5) 0;
+        padding: ($size-default-factor * 10) 0 ($size-default-factor) 0;
         height: 100%;
     }
 
@@ -11,7 +11,7 @@
     }
 
     .profile {
-        margin-bottom: $size-default-factor * 20;
+        margin-bottom: $size-default-factor * 10;
 
         .greeting {
             h2 {
@@ -43,6 +43,27 @@
             left: 0;
             top: 0;
             bottom: 0;
+
+            .no-scroll {
+                overflow: hidden;
+            }
+        }
+    }
+
+    .panel {
+        display: flex;
+        flex-direction: column;
+
+        .list {
+            overflow-y: auto;
+            flex-grow: 1;
+        }
+
+        &-patches,
+        &-teams {
+            p {
+                text-align: justify;
+            }
         }
     }
 

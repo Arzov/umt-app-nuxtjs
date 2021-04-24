@@ -47,17 +47,17 @@
                     <a-col :span="24">
                         <umt-tabs>
                             <!-- CHALLENGES -->
-                            <umt-tab-panel tab="1" label="desafiar" class="panel-challenges">
+                            <umt-tab-panel tab="1" label="desafiar" class="panel panel-challenges">
                                 <div v-if="umtLoading" class="list">
                                     <umt-skeleton v-for="index in 3" :key="index" />
                                 </div>
                                 <div v-if="!umtLoading" class="list">
-                                    <umt-challenge-cell v-for="(c, index) in challenges" :key="index" :team="c" />
+                                    <umt-request-cell v-for="(c, index) in challenges" :key="index" :team="c" button-label="desafiar" />
                                 </div>
                             </umt-tab-panel>
 
                             <!-- PATCH -->
-                            <umt-tab-panel tab="2" label="parchar" class="panel-patches">
+                            <umt-tab-panel tab="2" label="parchar" class="panel no-scroll panel-patches">
                                 <p>Únete a partidos cercanos a ti. Puedes parchar de manera individual a equipos que requieran de jugadores.</p>
                                 <div v-if="umtLoading" class="list">
                                     <umt-skeleton v-for="index in 2" :key="index" />
@@ -67,8 +67,17 @@
                                 </div>
                             </umt-tab-panel>
 
-                            <umt-tab-panel tab="3" label="filtros">
-                                Prueba 3
+                            <!-- TEAMS -->
+                            <umt-tab-panel tab="3" label="equipos" class="panel no-scroll panel-teams">
+                                <p>¿No tienes equipo? Busca uno cercano a ti o encuentra uno por su nombre.</p>
+                                <umt-input type="search" placeholder="Busca un equipo" />
+
+                                <div v-if="umtLoading" class="list">
+                                    <umt-skeleton v-for="index in 3" :key="index" />
+                                </div>
+                                <div v-if="!umtLoading" class="list">
+                                    <umt-request-cell v-for="(t, index) in teams" :key="index" :team="t" button-label="solicitar" />
+                                </div>
                             </umt-tab-panel>
                         </umt-tabs>
                     </a-col>
@@ -229,6 +238,33 @@
                             }
                         ],
                         patches: [2, 3]
+                    }
+                ],
+                teams: [
+                    {
+                        name: 'SCHALKE 04',
+                        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/FC_Schalke_04_Logo.png/768px-FC_Schalke_04_Logo.png',
+                        distance: 1
+                    },
+                    {
+                        name: 'MAN. UNITED',
+                        image: 'https://1.bp.blogspot.com/-H7yH4f3xhcc/W13iC-mChEI/AAAAAAAAJNk/NKrpWalUMioc-ssVO6PSXwFroNRIyD4JQCLcBGAs/s320/1.png',
+                        distance: 2
+                    },
+                    {
+                        name: 'ARSENAL F.C.',
+                        image: 'https://1.bp.blogspot.com/-YTfHg_rLRcI/XSPhR75-1hI/AAAAAAAAQzg/mKnWtxoM9jo7IIF7b43LPZPh4xQuK2T6gCLcBGAs/s1600/escudo1.png',
+                        distance: 2.5
+                    },
+                    {
+                        name: 'BAYERN MUNICH',
+                        image: 'https://www.logofootball.net/wp-content/uploads/FC-Bayern-Munich-Logo.png',
+                        distance: 3
+                    },
+                    {
+                        name: 'BORUSSIA DORTMUND',
+                        image: 'https://2.bp.blogspot.com/-sNt8VyJtStw/WVUE6AHVB7I/AAAAAAABKZU/Ts238O_8GVEaqDCmCu56NV9xZ457dvwUQCLcBGAs/s1600/Borussia%2BDortmund.png',
+                        distance: 4.5
                     }
                 ]
             }
