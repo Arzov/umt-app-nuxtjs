@@ -1,0 +1,12 @@
+.umt-step-bkg {
+    display: flex;
+    flex-direction: column;
+
+    .bkg-bl {
+      flex-grow: 1;
+
+      img {
+        margin-bottom: $size-default-factor * 10;
+      }
+    }
+}

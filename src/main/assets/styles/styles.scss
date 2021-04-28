@@ -10,6 +10,8 @@
 // COMPONENTS
 @import './components/umt-position-group';
 @import './components/umt-home-bkg';
+@import './components/umt-step-bkg';
+@import './components/umt-profile-bkg';
 
 // PAGES
 @import './pages/start';
@@ -22,3 +24,4 @@
 @import './pages/optional-attributes';
 @import './pages/optional-filters';
 @import './pages/home';
+@import './pages/profile';

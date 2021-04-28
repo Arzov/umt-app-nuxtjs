@@ -3,12 +3,8 @@
     display: flex;
     flex-direction: column;
 
-    .bkg-bl {
+    & > div {
       flex-grow: 1;
-
-      img {
-        margin-bottom: $size-default-factor * 10;
-      }
     }
   }
 

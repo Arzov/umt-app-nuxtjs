@@ -1,0 +1,10 @@
+.umt-profile-bkg {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    & > div:nth-child(1) {
+        margin-top: $size-default-factor * 25;
+        flex-grow: 1;
+    }
+}

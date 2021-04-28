@@ -1,0 +1,46 @@
+.umt-page-profile {
+    .profile {
+        padding: 5px 0;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            display: block;
+            max-width: 80%;
+        }
+
+        &-wrapper {
+            position: relative;
+
+            .profile-bkg {
+                position: absolute;
+                right: 0;
+                min-height: 100%;
+                width: 200%;
+                transform: scaleY(1.2);
+            }
+        }
+    }
+
+    .info {
+        padding: $size-default-factor 0;
+        padding-left: $size-default-factor * 2;
+
+        h3 {
+            font-weight: 600;
+        }
+
+        .teams {
+            color: var(--color-anchor-link);
+            margin-top: -$size-default-factor;
+        }
+
+        .team-logo {
+            display: inline-block;
+            height: 1.2rem;
+            margin-right: 2px;
+        }
+    }
+}

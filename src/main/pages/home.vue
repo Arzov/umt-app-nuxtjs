@@ -15,8 +15,8 @@
                     </a-col>
 
                     <a-col :span="3">
-                        <umt-profile :mode="$umtThemePrefix">
-                            <umt-profile slot="extra" :mode="$umtThemePrefix" type="team" />
+                        <umt-profile @click="toProfile">
+                            <umt-profile slot="extra" type="team" />
                         </umt-profile>
                     </a-col>
                 </a-row>
@@ -197,11 +197,6 @@
                         distance: 5
                     },
                     {
-                        name: 'FC BARCELONA',
-                        image: 'https://i.pinimg.com/originals/4e/87/0c/4e870c6d61be9306bd9681554b0df83d.png',
-                        distance: 4.5
-                    },
-                    {
                         name: 'BAYERN MUNICH',
                         image: 'https://www.logofootball.net/wp-content/uploads/FC-Bayern-Munich-Logo.png',
                         distance: 3
@@ -278,6 +273,10 @@
         methods: {
             onAcceptGeoloc () {
                 this.showModalGeoloc = false
+            },
+
+            toProfile () {
+                this.$router.push({ path: 'profile' })
             }
         }
     }
